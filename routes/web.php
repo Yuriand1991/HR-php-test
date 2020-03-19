@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->name('home');
+Route::get('/orders', function () {
+    return view('orders');
+})->name('orders');;
+Route::get('/order', function () {
+    return view('order');
+})->name('order');
+Route::post('/order/submit', function () {
+     dd(Request::all());
+})->name('order-form');
