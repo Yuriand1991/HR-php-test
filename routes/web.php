@@ -20,6 +20,4 @@ Route::get('/orders', function () {
 Route::get('/order', function () {
     return view('order');
 })->name('order');
-Route::post('/order/submit', function () {
-     dd(Request::all());
-})->name('order-form');
+Route::post('/order/submit', 'OrderController@submit')->name('order-form');
