@@ -8,6 +8,7 @@
 </head>
 <body>
 	@include('inc.header')
+	@include('inc.messages')
 	@yield('content')
 </body>
 </html>
