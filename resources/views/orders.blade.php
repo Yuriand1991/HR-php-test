@@ -27,13 +27,13 @@
 					{{$product->name}}
 					@endforeach
 				</td>
-				<td>
+				<td class="alert alert-success">
 					@if ($el->status === 0)
 						Новый
 					@elseif ($el->status === 10)
 						Подтвержден
 					@elseif ($el->status === 20)
-						Завершен
+							Завершен
 					@endif
 				</td>
 			</tr>
