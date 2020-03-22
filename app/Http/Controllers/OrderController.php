@@ -8,7 +8,9 @@ use App\Order;
 
 class OrderController extends Controller
 {
-    //
+    /*************************/
+	/*Метод добавления заказа*/
+	/*************************/
 	public function submit(OrderRequest $req)
 	{
 		$order = new Order();
@@ -18,9 +20,11 @@ class OrderController extends Controller
 		$order->save();
 		
 		return redirect()->route('home')->with('success', 'Заказ добавлен');
-		//$validation = $req->validate([
-									//'email' => 'required|email'
-								//	]);
-		//dd($req->input('email'));
+	}
+	/*************************/
+	/*Метод получения всех записей*/
+	/*************************/
+	public function allData(){
+		return view('orders', ['data'=>Order::all()]);
 	}
 }

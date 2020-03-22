@@ -14,10 +14,8 @@
 Route::get('/', function () {
     return view('index');
 })->name('home');
-Route::get('/orders', function () {
-    return view('orders');
-})->name('orders');;
 Route::get('/order', function () {
     return view('order');
 })->name('order');
+Route::get('/orders', 'OrderController@allData')->name('orders');
 Route::post('/order/submit', 'OrderController@submit')->name('order-form');
