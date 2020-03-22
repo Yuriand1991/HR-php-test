@@ -15,5 +15,7 @@ Route::get('/', 'WeatherController@getWeather')->name('home');
 Route::get('/order', function () {
     return view('order');
 })->name('order');
+
+Route::get('/order/{id}', 'OrderController@showOrder')->name('order-edit');
+Route::post('/order/{id}', 'OrderController@updateOrder')->name('order-update');
 Route::get('/orders', 'OrderController@allData')->name('orders');
-Route::post('/order/submit', 'OrderController@submit')->name('order-form');

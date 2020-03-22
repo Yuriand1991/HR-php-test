@@ -19,7 +19,7 @@
 		<tbody>
 		@foreach($data as $el)
 			<tr>
-				<td>{{$el->id}}</td>
+				<td><a href="{{route('order-edit', $el->id)}}">{{$el->id}}</a></td>
 				<td>{{$el->partner->name}}</td>
 				<td>{{$el->products->sum('price')}}</td>
 				<td>
@@ -33,7 +33,7 @@
 					@elseif ($el->status === 10)
 						Подтвержден
 					@elseif ($el->status === 20)
-							Завершен
+						Завершен
 					@endif
 				</td>
 			</tr>
