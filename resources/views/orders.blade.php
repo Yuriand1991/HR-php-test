@@ -6,7 +6,7 @@
 
 @section('content')
 	<h1>Заказы</h1>
-	<table class="table table-striped table-hover table-bordered">
+	<table class="table table-striped table-hover table-bordered table-sm">
 		<thead>
 			<tr class="info" >
 				<th>ид_заказа</th>
@@ -27,15 +27,19 @@
 					{{$product->name}}
 					@endforeach
 				</td>
-				<td class="alert alert-success">
 					@if ($el->status === 0)
+					<td class="warning">
 						Новый
+					</td>
 					@elseif ($el->status === 10)
+					<td class="info">
 						Подтвержден
+					</td>
 					@elseif ($el->status === 20)
+					<td class="success">
 						Завершен
+					</td>
 					@endif
-				</td>
 			</tr>
 		@endforeach
 		</tbody>
