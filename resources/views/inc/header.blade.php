@@ -12,8 +12,8 @@
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="{{route('home')}}">Погода</a></li>
-				<li><a href="{{route('orders')}}">Заказы</a></li>
+				<li {{ (Request::is('/') ? 'class=active' : '') }}><a href="{{route('home')}}" >Погода</a></li>
+				<li {{ (Request::is('orders') ? 'class=active' : '') }}><a href="{{route('orders')}}" >Заказы</a></li>
 			</ul>
 		</div>
 	</div>
