@@ -44,4 +44,8 @@
 		@endforeach
 		</tbody>
 	</table>
+	<ul class="pagination">
+		<li class="page-item"><a class="page-link" href="{{route('orders', $page-1 <= 0 ? 0 : $page-1)}}">Предыдущая</a></li>
+		<li class="page-item"><a class="page-link" href="{{route('orders', $page+1 >= $count ? $count : $page+1)}}">Следующая</a></li>
+	</ul>
 @endsection

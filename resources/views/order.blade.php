@@ -12,6 +12,7 @@
 		<div class="form-group">
 			<label for="email">E-mail клиента</label>
 			<input type="text" name="email" id="email" class="form-control" value="{{$order->client_email}}">
+			<p class="help-block">Обязательно для заполнения</p>
 		</div>
 			
 		<div class="form-group">
@@ -21,6 +22,7 @@
 				<option value = "{{$partner->id}}" {{$partner->id === $order->partner_id ? 'selected' : ''}}>{{$partner->name}}</option>
 			@endforeach
 			</select>
+			<p class="help-block">Обязательно для заполнения</p>
 		</div>
 			
 		<div class="form-group">
@@ -39,11 +41,12 @@
 				<option value = "10" {{$order->status === 10 ? 'selected' : ''}}>Подтвержден</option>
 				<option value = "20" {{$order->status === 20 ? 'selected' : ''}}>Завершен</option>
 			</select>
+			<p class="help-block">Обязательно для заполнения</p>
 		</div>
 			
 		<div class="form-group">
 			<label for="price">Стоимость заказа</label>
-			<p name="price" id="price">{{$order->products->sum('price')}}</p>
+			<p name="price" id="price">{{$order->products->sum('price')}} руб.</p>
 		</div>
 		<button type="submit" class="btn btn-success">Сохранить</button>
 	</form>

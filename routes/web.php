@@ -18,4 +18,4 @@ Route::get('/order', function () {
 
 Route::get('/order/{id}', 'OrderController@showOrder')->name('order-edit');
 Route::post('/order/{id}', 'OrderController@updateOrder')->name('order-update');
-Route::get('/orders', 'OrderController@allData')->name('orders');
+Route::get('/orders/{page}', 'OrderController@getData')->name('orders');

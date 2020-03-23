@@ -12,8 +12,9 @@ class OrderController extends Controller
 	/******************************/
 	/*Метод получения всех заказов*/
 	/*****************************/
-	public function allData(){
-		return view('orders', ['data'=>Order::all()]);
+	public function getData($page){
+		$order = new Order();
+		return view('orders', ['data'=>$order->skip($page*10)->take(10)->get(), 'page'=>$page, 'count'=>(int)($order->count()/10)]);
 	}
 	
 	/******************************/
